@@ -1,0 +1,43 @@
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+#bar {
+#  colors {
+#    background #282A36
+#    statusline #F8F8F2
+#    separator  #44475A
+#
+#    focused_workspace  #44475A #44475A #F8F8F2
+#    active_workspace   #282A36 #44475A #F8F8F2
+#    inactive_workspace #282A36 #282A36 #BFBFBF
+#    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#    binding_mode       #FF5555 #FF5555 #F8F8F2
+#  }
+#        status_command i3status
+#	position top
+#	output primary
+#	tray_output none
+#	font pango:DejaVu Sans Mono 10
+#	separator_symbol ⁞
+#}
+
+#polybar
+#exec_always --no-startup-id /home/gokul/.config/polybar/launch.sh
+
+
+bar {
+        # status_command conky
+        position bottom
+        padding 0 2px
+        # font -xos4-terminus-medium-r-normal--12-120-72-72-C-60-iso8859-1
+        # font -*-proggysquaresz-medium-r-normal-*-11-80-*-*-*-*-iso8859-1
+        workspace_buttons yes
+        # i3bar_cmd "date +'%D - %T'"
+        colors  {
+        background #0F0F0F
+        statusline #D5D5D5
+        focused_workspace #E5E5E5 #AA36DF
+        active_workspace #E5E5E5 #5697B2
+        inactive_workspace #E5E5E5 #000000
+        urgent_workspace #050505 #FF0000
+}
+}

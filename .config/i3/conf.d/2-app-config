@@ -1,0 +1,33 @@
+# start a terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+#ADDed below linw instead of above line by GOKUL 
+bindsym $mod+Return exec --no-startup-id i3-msg "workspace 3" && st
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+#bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+#Application launcher bindings---GOKUL
+bindsym $mod+b exec --no-startup-id i3-msg "workspace 2" && brave
+bindsym $mod+f exec --no-startup-id i3-msg "workspace 5" && thunar
+#bindsym $mod+s exec --no-startup-id i3-msg "workspace 4" && spotify
+#bindsym $mod+s exec --no-startup-id st -c music cmus & st -c music cava
+bindsym $mod+s exec --no-startup-id st -c music cmus
+bindsym $mod+g exec --no-startup-id glava -m circle -d
+
+#assign workspace ---GOKUL
+for_window [class="firefox"] move to workspace 2
+for_window [class="Brave-browser"] move to workspace 2
+for_window [class="qutebrowser"] move to workspace 2
+for_window [class="kitty"] move to workspace 3
+for_window [class="Thunar"] move to workspace 5
+for_window [class="Spotify"] move to workspace 4
+for_window [class="music"] move to workspace 4
+
+#Floating rule -- GOKUL
+#for_window [class="Microsoft Teams - Preview"] floating enable
+for_window [class="Eog"] floating enable

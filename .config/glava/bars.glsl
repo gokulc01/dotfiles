@@ -6,17 +6,17 @@
 /* Width (in pixels) of each bar gap */
 #define BAR_GAP 2
 /* Outline color */
-#define BAR_OUTLINE #262626
+#define BAR_OUTLINE #000000
 /* Outline width (in pixels, set to 0 to disable outline drawing) */
-#define BAR_OUTLINE_WIDTH 0
+#define BAR_OUTLINE_WIDTH 1
 /* Amplify magnitude of the results each bar displays */
-#define AMPLIFY 300
+#define AMPLIFY 500
 /* Whether the current settings use the alpha channel;
    enabling this is required for alpha to function
    correctly on X11 with `"native"` transparency. */
-#define USE_ALPHA 0
+#define USE_ALPHA 1
 /* How strong the gradient changes */
-#define GRADIENT_POWER 60
+#define GRADIENT_POWER 100
 /* Bar color changes with height */
 #define GRADIENT (d / GRADIENT_POWER + 1)
 /* Bar color */
@@ -26,7 +26,7 @@
 /* Whether to switch left/right audio buffers */
 #define INVERT 0
 /* Whether to flip the output vertically */
-#define FLIP 0
+#define FLIP 1
 /* Whether to mirror output along `Y = X`, causing output to render on the left side of the window */
 /* Use with `FLIP 1` to render on the right side */
 #define MIRROR_YX 0

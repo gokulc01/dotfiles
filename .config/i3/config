@@ -116,6 +116,7 @@ bindsym $mod+f exec --no-startup-id i3-msg "workspace 5" && thunar
 #bindsym $mod+s exec --no-startup-id st -c music cmus & st -c music cava
 bindsym $mod+s exec --no-startup-id st -c music cmus
 bindsym $mod+g exec --no-startup-id glava -m circle -d
+bindsym $mod+Shift+g exec --no-startup-id killall glava
 
 #assign workspace ---GOKUL
 for_window [class="firefox"] move to workspace 2

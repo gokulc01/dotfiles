@@ -31,3 +31,4 @@ workspace 2 gaps outer  0
 workspace 4 gaps inner 30
 workspace 4 gaps outer  0
 
+bindsym $mod+x move workspace to output next

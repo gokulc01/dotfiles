@@ -138,3 +138,4 @@ wal -Rneq
 
 eval "$(zoxide init zsh)"
 eval $(thefuck --alias)
+source ~/.arduino_cli_completions.sh

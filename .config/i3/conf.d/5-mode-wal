@@ -6,6 +6,7 @@ mode "wallpaper"{
 	bindsym w exec --no-startup-id wal -i /home/gokul/.wallpaper/waifu/ -e -o ~/scripts/wal_rgb.sh
 	bindsym q exec --no-startup-id wal -i /home/gokul/.wallpaper/quotes/ -e -o ~/scripts/wal_rgb.sh
 	bindsym g exec --no-startup-id wal -i /home/gokul/.wallpaper/good/ -e -o ~/scripts/wal_rgb.sh
+	bindsym d exec --no-startup-id wal -i /home/gokul/.wallpaper/dual_monitor/ -e -o ~/scripts/wal_rgb.sh
 }
 
 bindsym $mod+$mod1+w mode "wallpaper"

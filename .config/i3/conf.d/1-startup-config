@@ -36,28 +36,35 @@ exec --no-startup-id nm-applet
 #exec_always --no-startup-id picom -b -i 0.7 --active-opacity 0.95 
 
 #start PICOM --- GOKUL
-exec_always picom --config /home/gokul/.config/i3/picom.conf -b
+exec picom --config /home/gokul/.config/i3/picom.conf -b
 
 #get wallpaper --- GOKUL
 #exec --no-startup-id nitrogen --restore
 
-#set refresh rate --- GOKUL
-exec --no-startup-id xrandr --rate 60
+#set monitors --- GOKUL
+exec --no-startup-id xrandr --auto
+exec --no-startup-id xrandr --output HDMI-1-0 --left-of eDP
 
 #start libinput-gesture --- GOKUL
-exec_always --no-startup-id libinput-gestures -c /home/gokul/.config/i3/libinput-gestures.conf
+exec --no-startup-id libinput-gestures -c /home/gokul/.config/i3/libinput-gestures.conf
 
 #enable tapping on touchpad --- GOKUL
-exec_always --no-startup-id xinput set-prop "SYNA32A5:00 06CB:CE17 Touchpad" "libinput Tapping Enabled" 1
+exec --no-startup-id xinput set-prop "SYNA32A5:00 06CB:CE17 Touchpad" "libinput Tapping Enabled" 1
 
 #enable natural scrolling on touchpad --- GOKUL
-exec_always --no-startup-id xinput set-prop "SYNA32A5:00 06CB:CE17 Touchpad" "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xinput set-prop "SYNA32A5:00 06CB:CE17 Touchpad" "libinput Natural Scrolling Enabled" 1
 
 #set brightness to 0
 exec --no-startup-id brightnessctl set 5%
 
 #restore wallpaper and theme
-exec_always --no-startup-id wal -Re -o /home/gokul/scripts/wal_rgb.sh
+exec --no-startup-id wal -Re -o /home/gokul/scripts/wal_rgb.sh
+
+# open some apps
+exec --no-startup-id st
+exec --no-startup-id st -c music cmus
+exec --no-startup-id brave
+
 
 #Use brightnessctl to change brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 2%-

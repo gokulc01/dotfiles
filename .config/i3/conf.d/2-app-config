@@ -24,7 +24,8 @@ bindsym $mod+m exec --no-startup-id st -c music cmus
 for_window [class="firefox"] move to workspace 2
 for_window [class="Brave-browser"] move to workspace 2
 for_window [class="qutebrowser"] move to workspace 2
-for_window [class="kitty"] move to workspace 3
+for_window [class="st"] move to workspace 3
+#for_window [class="kitty"] move to workspace 3
 for_window [class="Thunar"] move to workspace 5
 for_window [class="Spotify"] move to workspace 4
 for_window [class="music"] move to workspace 4

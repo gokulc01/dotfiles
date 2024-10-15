@@ -43,7 +43,7 @@ exec picom --config /home/gokul/.config/i3/picom.conf -b
 
 #set monitors --- GOKUL
 exec --no-startup-id xrandr --auto
-exec --no-startup-id xrandr --output HDMI-1-0 --left-of eDP
+#exec --no-startup-id xrandr --output HDMI-1-0 --left-of eDP
 
 #start libinput-gesture --- GOKUL
 exec --no-startup-id libinput-gestures -c /home/gokul/.config/i3/libinput-gestures.conf

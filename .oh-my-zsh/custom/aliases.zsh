@@ -2,7 +2,6 @@ alias qqq=exit
 alias ls=eza
 alias n=nvim
 alias dim='xrandr --output eDP-1 --brightness'
-alias sshd='ssh -N -L 8006:192.168.1.74:8006 -p 2222 root@gokulc.cloudns.ph '
 alias pn='echo $(cat /sys/class/power_supply/BAT0/power_now)/1000000 |  bc -l'
 alias tn='tmux new-session -s'
 alias tl='tmux list-sessions'

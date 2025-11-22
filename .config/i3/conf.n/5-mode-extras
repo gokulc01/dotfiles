@@ -1,0 +1,11 @@
+mode "extras"{
+	bindsym Escape mode "default"
+	bindsym $mod+$mod1+e mode "default"
+	# bindsym c exec --no-startup-id conky -q -c ~/.config/conky/macchiato.conf
+	# bindsym g exec --no-startup-id glava -m circle -d
+	# bindsym Shift+c exec --no-startup-id killall conky
+	# bindsym Shift+g exec --no-startup-id killall glava
+
+}
+
+bindsym $mod+$mod1+e mode "extras"

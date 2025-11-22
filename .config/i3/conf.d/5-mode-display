@@ -1,0 +1,8 @@
+mode "display" {
+        bindsym p exec /home/gokul/.config/i3/only_main_display.sh
+        bindsym s exec /home/gokul/.config/i3/only_second_display.sh
+        bindsym b exec /home/gokul/.config/i3/both_display.sh
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+$mod1+d mode "display"

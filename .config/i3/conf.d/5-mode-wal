@@ -1,0 +1,12 @@
+mode "wallpaper"{
+	bindsym Escape mode "default"
+	bindsym $mod+$mod1+w mode "default"
+	bindsym l exec wal --saturate 1.0 -i /home/gokul/.wallpaper/landscape
+	bindsym m exec wal --saturate 1.0 -i /home/gokul/.wallpaper/minimilistic
+	bindsym w exec wal --saturate 1.0 -i /home/gokul/.wallpaper/waifu
+	bindsym g exec wal --saturate 1.0 -i /home/gokul/.wallpaper/good
+	bindsym d exec wal --saturate 1.0 -i /home/gokul/.wallpaper/dual
+	bindsym b exec wal --saturate 1.0 -i /home/gokul/.wallpaper/black
+}
+
+bindsym $mod+$mod1+w mode "wallpaper"

@@ -1,0 +1,3 @@
+xrandr --output eDP-1 --mode 1920x1080 --rate 144
+xrandr --output HDMI-1-0 --mode 1920x1080 --rate 100 --left-of eDP-1
+i3-msg mode "default"

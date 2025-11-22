@@ -1,0 +1,49 @@
+# start a terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+#ADDed below linw instead of above line by GOKUL 
+bindsym $mod+Return exec --no-startup-id i3-msg "workspace 3" && kitty
+bindsym $mod+Shift+Return exec --no-startup-id i3-msg "workspace 3" && st
+
+# start dmenu (a program launcher)
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
+
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+#bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+#Application launcher bindings---GOKUL
+bindsym $mod+b exec --no-startup-id i3-msg "workspace 2" && zen
+bindsym $mod+f exec --no-startup-id i3-msg "workspace 5" && dolphin
+bindsym $mod+n exec --no-startup-id i3-msg "workspace 1" && trilium
+
+#bindsym $mod+l exec i3lock -c 000000
+#bindsym $mod+p exec --no-startup-id i3-msg "workspace 5" && /usr/lib/pentablet/PenTablet.sh
+
+#bindsym $mod+s exec --no-startup-id i3-msg "workspace 4" && spotify
+#bindsym $mod+s exec --no-startup-id st -c music cmus & st -c music cava
+bindsym $mod+m exec --no-startup-id i3-msg "workspace 4" && st -c music cmus
+#bindsym $mod+g exec --no-startup-id glava -m circle -d
+#bindsym $mod+Shift+g exec --no-startup-id killall glava
+
+#assign workspace ---GOKUL
+for_window [class="zen"] move to workspace 2
+for_window [class="Brave-browser"] move to workspace 2
+for_window [class="qutebrowser"] move to workspace 2
+for_window [class="st"] move to workspace 3
+for_window [class="kitty"] move to workspace 3
+#for_window [class="Thunar"] move to workspace 5
+for_window [class="Spotify"] move to workspace 4
+for_window [class="music"] move to workspace 4
+#for_window [class="com.github.xournalpp.xournalpp"] move to workspace 4
+
+#Floating rule -- GOKUL
+#for_window [class="Microsoft Teams - Preview"] floating enable
+for_window [class="Eog"] floating enable
+
+#Fullscreen rule
+for_window [class="zen"] fullscreen enable
+for_window [class="Spotify"] fullscreen enable
+#for_window [class="music"] fullscreen enable

@@ -1,0 +1,10 @@
+mode "powermenu"{
+
+	bindsym p exec poweroff             #PowerOff
+	bindsym r exec reboot               #ReBoot
+	bindsym e exec i3-msg exit          #LogOut
+	bindsym l exec i3lock               #Suspend
+	bindsym Escape mode "default"
+	bindsym $mod+$mod1+p mode "default"
+}
+bindsym $mod+$mod1+p mode "powermenu"

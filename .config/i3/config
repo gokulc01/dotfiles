@@ -1,0 +1,332 @@
+# This file has been auto-generated, direct editing is not recommended
+# Find files under conf.d directory, which are stiched together to generate this file
+
+# DONOT reload from i3msg, instead by default use Mod1+Ctrl+r or customise it your own key bind 
+
+set $mod Mod1
+set $mod1 Ctrl
+
+gaps inner 0
+gaps outer 0
+bindsym $mod+o		gaps outer current plus 5
+bindsym $mod+i          gaps inner current plus 5
+bindsym $mod+Shift+o	gaps outer current minus 5
+bindsym $mod+Shift+i	gaps inner current minus 5
+
+# Font for window titles
+font pango:Terminus 12px
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+# exec --no-startup-id nm-applet
+# exec_always sudo nbfc start
+
+exec_always sudo ryzenadj -a 10000 -b 10000 -c 10000 -f 85 --power-saving
+#start COMPTON(compositor)--- GOKUL
+#exec_always --no-startup-id picom -b -i 0.7 --active-opacity 0.95 
+
+#start PICOM --- GOKUL
+#exec picom --config /home/gokul/.config/i3/picom.conf -b
+
+#get wallpaper --- GOKUL
+#exec --no-startup-id nitrogen --restore
+
+#set monitors --- GOKUL
+#exec_always --no-startup-id xrandr -r 60
+#exec --no-startup-id xrandr --output HDMI-1-0 --left-of eDP
+
+#start libinput-gesture --- GOKUL
+#exec --no-startup-id libinput-gestures -c /home/gokul/.config/i3/libinput-gestures.conf
+
+#enable tapping on touchpad --- GOKUL
+exec --no-startup-id xinput set-prop "SYNA32A5:00 06CB:CE17 Touchpad" "libinput Tapping Enabled" 1
+
+#enable natural scrolling on touchpad --- GOKUL
+exec --no-startup-id xinput set-prop "SYNA32A5:00 06CB:CE17 Touchpad" "libinput Natural Scrolling Enabled" 1
+
+#set brightness to 0
+exec --no-startup-id brightnessctl set 5%
+
+exec picom --config ~/.config/i3/picom.conf -b
+
+exec sudo nbfc start
+
+exec eww -c ~/.config/i3/ewwbar open bar
+
+#restore wallpaper and theme
+#exec --no-startup-id wal -Re -o /home/gokul/scripts/wal_rgb.sh
+exec --no-startup-id wal -R
+
+# open some apps
+
+#exec --no-startup-id st
+#exec --no-startup-id st -c music cmus
+#exec --no-startup-id brave
+
+exec zen
+exec kitty
+
+#lock screen
+#exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
+
+#Use brightnessctl to change brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 2%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 2%+
+
+
+# Use amixer to change volume.
+#set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 2%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 2%-
+bindsym XF86AudioMute exec --no-startup-id amixer set Master 1+ toggle
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+#bindsym XF86Launch6 exec --no-startup Gnome-calculator
+
+bindsym $mod+w move workspace to output next
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# reload the configuration file
+#bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+#bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec --no-startup-id cat /home/gokul/.config/i3/conf.d/* > /home/gokul/.config/i3/config && i3-msg "restart"
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+q exec i3-msg "exit"
+bindsym $mod+Shift+x exec i3lock -i /home/gokul/.config/i3/win-crash-lock-wal.png
+# start a terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+#ADDed below linw instead of above line by GOKUL 
+bindsym $mod+Return exec --no-startup-id i3-msg "workspace 3" && kitty
+bindsym $mod+Shift+Return exec --no-startup-id i3-msg "workspace 3" && st
+
+# start dmenu (a program launcher)
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
+
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+#bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+#Application launcher bindings---GOKUL
+bindsym $mod+b exec --no-startup-id i3-msg "workspace 2" && zen
+bindsym $mod+f exec --no-startup-id i3-msg "workspace 5" && dolphin
+bindsym $mod+n exec --no-startup-id i3-msg "workspace 1" && trilium
+
+#bindsym $mod+l exec i3lock -c 000000
+#bindsym $mod+p exec --no-startup-id i3-msg "workspace 5" && /usr/lib/pentablet/PenTablet.sh
+
+#bindsym $mod+s exec --no-startup-id i3-msg "workspace 4" && spotify
+#bindsym $mod+s exec --no-startup-id st -c music cmus & st -c music cava
+bindsym $mod+m exec --no-startup-id i3-msg "workspace 4" && st -c music cmus
+#bindsym $mod+g exec --no-startup-id glava -m circle -d
+#bindsym $mod+Shift+g exec --no-startup-id killall glava
+
+#assign workspace ---GOKUL
+for_window [class="zen"] move to workspace 2
+for_window [class="Brave-browser"] move to workspace 2
+for_window [class="qutebrowser"] move to workspace 2
+for_window [class="st"] move to workspace 3
+for_window [class="kitty"] move to workspace 3
+#for_window [class="Thunar"] move to workspace 5
+for_window [class="Spotify"] move to workspace 4
+for_window [class="music"] move to workspace 4
+#for_window [class="com.github.xournalpp.xournalpp"] move to workspace 4
+
+#Floating rule -- GOKUL
+#for_window [class="Microsoft Teams - Preview"] floating enable
+for_window [class="Eog"] floating enable
+
+#Fullscreen rule
+for_window [class="zen"] fullscreen enable
+for_window [class="Spotify"] fullscreen enable
+#for_window [class="music"] fullscreen enable
+hide_edge_borders smart
+title_align left
+#default_border pixel 2
+
+# kill focused window
+bindsym $mod+q kill
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+Shift+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+e layout toggle split
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# class                 border  backgr. text    indicator child_border
+#client.focused          #ab20fd #aa44ff #ffffff #aa44ff   #39ff14
+#client.focused          #ab20fd #aa44ff #ffffff #aa44ff   #39ff14
+#client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+#client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+#client.urgent           #2f343a #900000 #ffffff #900000   #900000
+#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+#client.background       #ffffff
+
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+client.focused          $bg      $bg     $fg     $bg       $bg
+client.focused_inactive $bg      $bg     $fg     $bg       $bg
+client.unfocused        $bg      #222222 $fg     $bg       $bg
+client.urgent           $bg      #ff2222     $fg     $bg       $bg
+client.placeholder      $bg      $bg     $fg     $bg       $bg
+
+client.background       $bg
+# switch to workspace
+bindsym $mod+1 workspace "1"
+bindsym $mod+2 workspace "2"
+bindsym $mod+3 workspace "3"
+bindsym $mod+4 workspace "4"
+bindsym $mod+5 workspace "5"
+bindsym $mod+6 workspace "6"
+bindsym $mod+7 workspace "7"
+bindsym $mod+8 workspace "8"
+bindsym $mod+9 workspace "9"
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace "1"
+bindsym $mod+Shift+2 move container to workspace "2"
+bindsym $mod+Shift+3 move container to workspace "3"
+bindsym $mod+Shift+4 move container to workspace "4"
+bindsym $modShift+5 move container to workspace "5"
+bindsym $mod+Shift+6 move container to workspace "6"
+bindsym $mod+Shift+7 move container to workspace "7"
+bindsym $mod+Shift+8 move container to workspace "8"
+bindsym $mod+Shift+9 move container to workspace "9"
+
+# workspace "3" output HDMI-1-0
+# workspace "4" output eDP-1
+# workspace "2" output eDP-1
+# workspace "5" output eDP-1
+# workspace "1" output HDMI-1-0
+
+# --- GOKUl
+bindsym $mod+Ctrl+Right exec --no-startup-id i3-msg workspace next
+bindsym $mod+Ctrl+Left exec --no-startup-id i3-msg workspace prev
+
+workspace 3 gaps inner 25
+workspace 3 gaps outer  0
+
+#bindsym $mod+x move workspace to output next
+mode "control"{
+	#increase brightness 
+	bindsym Up exec --no-startup-id brightnessctl set +10%
+	bindsym Down exec --no-startup-id brightnessctl set 10%-
+	bindsym s exec import -window root "/home/gokul/Pictures/screenshot/$(date +'%y%m%d_%H%M%S.png')"
+	bindsym Escape mode "default"
+	bindsym $mod+$mod1+c mode "default"
+	bindsym Return mode "default"
+}
+
+bindsym $mod+$mod1+c mode "control"
+mode "display" {
+        bindsym p exec /home/gokul/.config/i3/only_main_display.sh
+        bindsym s exec /home/gokul/.config/i3/only_second_display.sh
+        bindsym b exec /home/gokul/.config/i3/both_display.sh
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+$mod1+d mode "display"
+mode "powermenu"{
+
+	bindsym p exec poweroff             #PowerOff
+	bindsym r exec reboot               #ReBoot
+	bindsym e exec i3-msg exit          #LogOut
+	bindsym l exec i3lock               #Suspend
+	bindsym Escape mode "default"
+	bindsym $mod+$mod1+p mode "default"
+}
+bindsym $mod+$mod1+p mode "powermenu"
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 50 px or 5 ppt
+        bindsym k resize grow height 50 px or 5 ppt
+        bindsym l resize shrink height 50 px or 5 ppt
+        bindsym semicolon resize grow width 50 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 20 px or 2 ppt
+        bindsym Down resize grow height 20 px or 2 ppt
+        bindsym Up resize shrink height 20 px or 2 ppt
+        bindsym Right resize grow width 20 px or 2 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+$mod1+r mode "default"
+}
+
+bindsym $mod+$mod1+r mode "resize"
+mode "wallpaper"{
+	bindsym Escape mode "default"
+	bindsym $mod+$mod1+w mode "default"
+	bindsym l exec wal --saturate 1.0 -i /home/gokul/.wallpaper/landscape
+	bindsym m exec wal --saturate 1.0 -i /home/gokul/.wallpaper/minimilistic
+	bindsym w exec wal --saturate 1.0 -i /home/gokul/.wallpaper/waifu
+	bindsym g exec wal --saturate 1.0 -i /home/gokul/.wallpaper/good
+	bindsym d exec wal --saturate 1.0 -i /home/gokul/.wallpaper/dual
+	bindsym b exec wal --saturate 1.0 -i /home/gokul/.wallpaper/black
+}
+
+bindsym $mod+$mod1+w mode "wallpaper"

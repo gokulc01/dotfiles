@@ -1,0 +1,11 @@
+mode "control"{
+	#increase brightness 
+	bindsym Up exec --no-startup-id brightnessctl set +10%
+	bindsym Down exec --no-startup-id brightnessctl set 10%-
+	bindsym s exec import -window root "/home/gokul/Pictures/screenshot/$(date +'%y%m%d_%H%M%S.png')"
+	bindsym Escape mode "default"
+	bindsym $mod+$mod1+c mode "default"
+	bindsym Return mode "default"
+}
+
+bindsym $mod+$mod1+c mode "control"

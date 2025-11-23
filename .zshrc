@@ -73,13 +73,13 @@ ZSH_THEME="random"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	themes
-  git
-  fzf
-  git-prompt
-  python
+  # git
+  # fzf
+  # git-prompt
+  # python
 	zsh-autosuggestions
   zsh-syntax-highlighting
-  # zsh-interactive-cd
+  zsh-interactive-cd
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -119,7 +119,7 @@ export SPARK_HOME=/opt/apache-spark
 source ~/.var
 
 # /usr/bin/wal -Rqne
-source <(fzf --zsh)
+# source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 
 figlet -f small -s "local term"

@@ -17,4 +17,4 @@ that i got to know about git bare repository. And now this.
 - ranger       file manager
 
 ## Screenshot
-[img]()
+[img](https://raw.githubusercontent.com/gokulc01/dotfiles/refs/heads/main/img/ss.png)

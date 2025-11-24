@@ -139,6 +139,7 @@ bindsym $mod+m exec --no-startup-id i3-msg "workspace 4" && st -c music cmus
 #bindsym $mod+Shift+g exec --no-startup-id killall glava
 
 #assign workspace ---GOKUL
+for_window [class="okular"] move to workspace 1
 for_window [class="zen"] move to workspace 2
 for_window [class="Brave-browser"] move to workspace 2
 for_window [class="qutebrowser"] move to workspace 2

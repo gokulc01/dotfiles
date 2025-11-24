@@ -73,6 +73,7 @@ ZSH_THEME="random"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	themes
+  k
   # git
   # fzf
   # git-prompt

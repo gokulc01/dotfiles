@@ -30,7 +30,7 @@ bindsym $mod+Shift+9 move container to workspace "9"
 bindsym $mod+Ctrl+Right exec --no-startup-id i3-msg workspace next
 bindsym $mod+Ctrl+Left exec --no-startup-id i3-msg workspace prev
 
-workspace 3 gaps inner 25
+workspace 3 gaps inner 35
 workspace 3 gaps outer  0
 
 #bindsym $mod+x move workspace to output next

@@ -59,7 +59,7 @@ exec eww -c ~/.config/i3/ewwbar open bar
 
 #restore wallpaper and theme
 #exec --no-startup-id wal -Re -o /home/gokul/scripts/wal_rgb.sh
-exec --no-startup-id wal -R
+#exec --no-startup-id wal -R
 
 # open some apps
 
@@ -260,7 +260,7 @@ bindsym $mod+Shift+9 move container to workspace "9"
 bindsym $mod+Ctrl+Right exec --no-startup-id i3-msg workspace next
 bindsym $mod+Ctrl+Left exec --no-startup-id i3-msg workspace prev
 
-workspace 3 gaps inner 25
+workspace 3 gaps inner 35
 workspace 3 gaps outer  0
 
 #bindsym $mod+x move workspace to output next
@@ -322,12 +322,12 @@ bindsym $mod+$mod1+r mode "resize"
 mode "wallpaper"{
 	bindsym Escape mode "default"
 	bindsym $mod+$mod1+w mode "default"
-	bindsym l exec wal --saturate 1.0 -i /home/gokul/.wallpaper/landscape
-	bindsym m exec wal --saturate 1.0 -i /home/gokul/.wallpaper/minimilistic
-	bindsym w exec wal --saturate 1.0 -i /home/gokul/.wallpaper/waifu
-	bindsym g exec wal --saturate 1.0 -i /home/gokul/.wallpaper/good
-	bindsym d exec wal --saturate 1.0 -i /home/gokul/.wallpaper/dual
-	bindsym b exec wal --saturate 1.0 -i /home/gokul/.wallpaper/black
+	bindsym l exec wal -i /home/gokul/.wallpaper/landscape
+	bindsym m exec wal -i /home/gokul/.wallpaper/minimilistic
+	bindsym w exec wal -i /home/gokul/.wallpaper/waifu
+	bindsym g exec wal -i /home/gokul/.wallpaper/good
+	bindsym d exec wal -i /home/gokul/.wallpaper/dual
+	bindsym b exec wal -i /home/gokul/.wallpaper/black
 }
 
 bindsym $mod+$mod1+w mode "wallpaper"

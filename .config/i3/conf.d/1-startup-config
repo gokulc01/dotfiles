@@ -59,7 +59,7 @@ exec eww -c ~/.config/i3/ewwbar open bar
 
 #restore wallpaper and theme
 #exec --no-startup-id wal -Re -o /home/gokul/scripts/wal_rgb.sh
-exec --no-startup-id wal -R
+#exec --no-startup-id wal -R
 
 # open some apps
 

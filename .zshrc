@@ -99,6 +99,8 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='nvim'
 # fi
 
+# bindkey '^L' 'bash sweep -b'
+
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 

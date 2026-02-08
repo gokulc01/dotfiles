@@ -157,7 +157,10 @@ for_window [class="Eog"] floating enable
 #Fullscreen rule
 for_window [class="zen"] fullscreen enable
 for_window [class="Spotify"] fullscreen enable
-#for_window [class="music"] fullscreen enable
+for_window [class="music"] fullscreen enable
+
+for_window [class="kitty"] layout default
+for_window [class="st"] layout default
 hide_edge_borders smart
 title_align left
 #default_border pixel 2
@@ -257,7 +260,6 @@ bindsym $mod+Shift+9 move container to workspace "9"
 # workspace "1" output HDMI-1-0
 
 workspace_layout tabbed
-
 # --- GOKUl
 bindsym $mod+Ctrl+Right exec --no-startup-id i3-msg workspace next
 bindsym $mod+Ctrl+Left exec --no-startup-id i3-msg workspace prev

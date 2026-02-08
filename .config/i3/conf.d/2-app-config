@@ -48,3 +48,6 @@ for_window [class="Eog"] floating enable
 for_window [class="zen"] fullscreen enable
 for_window [class="Spotify"] fullscreen enable
 #for_window [class="music"] fullscreen enable
+
+for_window [class="kitty"] layout default
+for_window [class="st"] layout default

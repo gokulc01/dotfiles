@@ -157,7 +157,7 @@ for_window [class="Eog"] floating enable
 #Fullscreen rule
 for_window [class="zen"] fullscreen enable
 for_window [class="Spotify"] fullscreen enable
-for_window [class="music"] fullscreen enable
+#for_window [class="music"] fullscreen enable
 
 for_window [class="kitty"] layout default
 for_window [class="st"] layout default
@@ -267,7 +267,7 @@ bindsym $mod+Ctrl+Left exec --no-startup-id i3-msg workspace prev
 workspace 3 gaps inner 35
 workspace 3 gaps outer  0
 
-#bindsym $mod+x move workspace to output next
+bindsym $mod+x move workspace to output next
 mode "control"{
 	#increase brightness 
 	bindsym Up exec --no-startup-id brightnessctl set +10%
@@ -332,6 +332,8 @@ mode "wallpaper"{
 	bindsym g exec wal -i /home/gokul/.wallpaper/good
 	bindsym d exec wal -i /home/gokul/.wallpaper/dual
 	bindsym b exec wal -i /home/gokul/.wallpaper/black
+	bindsym s exec wal -i /home/gokul/.wallpaper/scifi
+	bindsym v exec wal -i /home/gokul/.wallpaper/vehicle
 }
 
 bindsym $mod+$mod1+w mode "wallpaper"

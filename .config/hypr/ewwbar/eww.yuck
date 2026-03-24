@@ -8,20 +8,18 @@
 )
 
 (defwidget leftstuff []
-    (box :class "test"
+    (box :class "left"
          :halign "start"
          :space-evenly false
-         :spacing 8
-        (label :text "  ")
+         :spacing 0
         (label :class "workspace" :text workspace)
         (button :class "todo" :onclick "kitty --detach nvim ~/.todo" (label :text todos))
-        (label :text bat_time_remaining)
         (box :hexpand true (label :text music-playing))
     )
 )
 
 (defwidget rightstuff []
-    (box :class "time"
+    (box :class "right"
          :halign "end"
          :orientation "h"
          :space-evenly false
@@ -33,6 +31,7 @@
          (button :class "volume" :onclick "amixer set Master 1+ toggle" (label :text volume))
          (button :class "brightness" (label :text brightness))
          (label :class "battery" :text battery)
+         (label :text bat_time_remaining)
          (button :class "time" (label :text time))
     )
 )

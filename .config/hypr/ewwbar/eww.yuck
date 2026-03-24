@@ -36,7 +36,7 @@
     )
 )
 
-(defpoll time :interval "10s" "date '+%d%b, %a  %H:%M:%S'")
+(defpoll time :interval "10s" "date '+%d %b, %a  %H:%M:%S'")
 (defpoll volume :interval "0.5s" "./get_volume.sh")
 (defpoll music-playing :interval "1s" "./get_music.sh")
 (defpoll brightness :interval "1s" "./get_brightness.sh")

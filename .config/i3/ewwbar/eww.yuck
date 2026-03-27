@@ -7,7 +7,7 @@
 )
 
 (defwidget leftstuff []
-    (box :class "test"
+    (box :class "left"
          :halign "start"
          :space-evenly false
          :spacing 8
@@ -21,7 +21,7 @@
 )
 
 (defwidget rightstuff []
-    (box :class "time"
+    (box :class "right"
          :halign "end"
          :orientation "h"
          :space-evenly false

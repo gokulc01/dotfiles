@@ -1,0 +1,15 @@
+bar {
+        status_command i3status -c ~/.config/i3/i3status.conf
+        position bottom
+        # :workspace_buttonsfont -xos4-terminus-medium-r-normal--12-120-72-72-C-60-iso8859-1
+        font pango:DejaVu Sans Mono 12
+    workspace_buttons yes
+        colors  {
+        background #0F0F0F
+        statusline #D5D5D5
+        focused_workspace #ffffff #000000
+        active_workspace #ffffff #5697B2
+        inactive_workspace #000000 #ffffff
+        urgent_workspace #E5E5E5 #BC9B54
+      }
+}

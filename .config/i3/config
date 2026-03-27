@@ -14,7 +14,7 @@ bindsym $mod+Shift+o	gaps outer current minus 5
 bindsym $mod+Shift+i	gaps inner current minus 5
 
 # Font for window titles
-font pango:Terminus 12px
+font pango:SourceCodePro 12px
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -55,9 +55,10 @@ exec picom --config ~/.config/i3/picom.conf -b
 
 exec sudo nbfc start
 
-exec eww -c ~/.config/i3/ewwbar open bar
+#exec eww -c ~/.config/i3/ewwbar open bar
 
 #restore wallpaper and theme
+exec wal -i /home/gokul/.wallpaper/color
 #exec --no-startup-id wal -Re -o /home/gokul/scripts/wal_rgb.sh
 #exec --no-startup-id wal -R
 
@@ -264,7 +265,7 @@ workspace_layout tabbed
 bindsym $mod+Ctrl+Right exec --no-startup-id i3-msg workspace next
 bindsym $mod+Ctrl+Left exec --no-startup-id i3-msg workspace prev
 
-workspace 3 gaps inner 35
+workspace 3 gaps inner 15
 workspace 3 gaps outer  0
 
 bindsym $mod+x move workspace to output next
@@ -334,6 +335,22 @@ mode "wallpaper"{
 	bindsym b exec wal -i /home/gokul/.wallpaper/black
 	bindsym s exec wal -i /home/gokul/.wallpaper/scifi
 	bindsym v exec wal -i /home/gokul/.wallpaper/vehicle
+	bindsym c exec wal -i /home/gokul/.wallpaper/color
 }
 
 bindsym $mod+$mod1+w mode "wallpaper"
+bar {
+        status_command i3status -c ~/.config/i3/i3status.conf
+        position bottom
+        # :workspace_buttonsfont -xos4-terminus-medium-r-normal--12-120-72-72-C-60-iso8859-1
+        font pango:DejaVu Sans Mono 12
+    workspace_buttons yes
+        colors  {
+        background #0F0F0F
+        statusline #D5D5D5
+        focused_workspace #ffffff #000000
+        active_workspace #ffffff #5697B2
+        inactive_workspace #000000 #ffffff
+        urgent_workspace #E5E5E5 #BC9B54
+      }
+}

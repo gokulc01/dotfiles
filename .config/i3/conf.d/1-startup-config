@@ -14,7 +14,7 @@ bindsym $mod+Shift+o	gaps outer current minus 5
 bindsym $mod+Shift+i	gaps inner current minus 5
 
 # Font for window titles
-font pango:Terminus 12px
+font pango:SourceCodePro 12px
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -55,9 +55,10 @@ exec picom --config ~/.config/i3/picom.conf -b
 
 exec sudo nbfc start
 
-exec eww -c ~/.config/i3/ewwbar open bar
+#exec eww -c ~/.config/i3/ewwbar open bar
 
 #restore wallpaper and theme
+exec wal -i /home/gokul/.wallpaper/color
 #exec --no-startup-id wal -Re -o /home/gokul/scripts/wal_rgb.sh
 #exec --no-startup-id wal -R
 

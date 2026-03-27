@@ -8,14 +8,15 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="random"
-#ZSH_THEME="jonathan"
+#ZSH_THEME="random"
+ZSH_THEME="jtriley"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+#ZSH_THEME_RANDOM_CANDIDATES=( "cypher" "duellj" "evan" "funky" 
+#            "imajes" "jtriley" "mikeh" "rkj" "xiong-chiamiov")
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -73,14 +74,14 @@ ZSH_THEME="random"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	themes
-  k
+  # k
   # git
   # fzf
   # git-prompt
   # python
 	zsh-autosuggestions
-  zsh-syntax-highlighting
-  zsh-interactive-cd
+  # zsh-syntax-highlighting
+  # zsh-interactive-cd
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -125,4 +126,9 @@ source ~/.var
 # source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 
-figlet -f small -s "local term"
+#figlet -f small -s "local term"
+echo " _              _   _                 "
+echo "| |___  __ __ _| | | |_ ___ _ _ _ ___ "
+echo "| / _ \/ _/ _\` | | |  _/ -_) '_| '   \ "
+echo "|_\___/\__\__,_|_|  \__\___|_| |_|_|_|"
+

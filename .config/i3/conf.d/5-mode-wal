@@ -9,6 +9,7 @@ mode "wallpaper"{
 	bindsym b exec wal -i /home/gokul/.wallpaper/black
 	bindsym s exec wal -i /home/gokul/.wallpaper/scifi
 	bindsym v exec wal -i /home/gokul/.wallpaper/vehicle
+	bindsym c exec wal -i /home/gokul/.wallpaper/color
 }
 
 bindsym $mod+$mod1+w mode "wallpaper"

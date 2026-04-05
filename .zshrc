@@ -121,6 +121,7 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig
 export SPARK_HOME=/opt/apache-spark
 
 source ~/.var
+#source ~/.cache/wal/colors.sh
 
 # /usr/bin/wal -Rqne
 # source <(fzf --zsh)
@@ -132,3 +133,5 @@ echo "| |___  __ __ _| | | |_ ___ _ _ _ ___ "
 echo "| / _ \/ _/ _\` | | |  _/ -_) '_| '   \ "
 echo "|_\___/\__\__,_|_|  \__\___|_| |_|_|_|"
 
+# tmux new-session -As def
+~/scripts/tmux_rc.sh

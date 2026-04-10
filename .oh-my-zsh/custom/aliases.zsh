@@ -1,4 +1,5 @@
-alias qqq=exit
+alias qq='tmux detach-client'
+alias qqq='exit'
 alias clear='sweep -b -t 200'
 alias ls=eza
 alias n=nvim

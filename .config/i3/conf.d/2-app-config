@@ -1,6 +1,6 @@
 # terminal
-bindsym $mod+Shift+Return exec --no-startup-id i3-msg "workspace 3" && kitty
-bindsym $mod+Return exec --no-startup-id i3-msg "workspace 3" && st ~/scripts/tmux_rc.sh
+bindsym $mod+Return exec --no-startup-id i3-msg "workspace 3" && kitty
+bindsym $mod+Shift+Return exec --no-startup-id i3-msg "workspace 3" && st ~/scripts/tmux_rc.sh
 
 # dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -18,7 +18,8 @@ bindsym $mod+m exec --no-startup-id i3-msg "workspace 4" && st -c music cmus
 #assign workspace ---GOKUL
 for_window [class="okular"] move to workspace 1
 for_window [class="zen"] move to workspace 2
-for_window [class="Brave-browser"] move to workspace 2
+for_window [class="firefox"] move to workspace 2
+for_window [class="Brave-browser"] move to workspace 1
 for_window [class="qutebrowser"] move to workspace 2
 for_window [class="st"] move to workspace 3
 for_window [class="kitty"] move to workspace 3
